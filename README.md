@@ -7,7 +7,12 @@ WIP
 
 
 ## Contributing
-WIP
+Install conda environment (requires Python >= 3.11)  
+`conda env create -f environment.yaml -n fx4s`
+
+Install remaining dependencies via pip  
+`pip install tensorflow`  
+`pip install ptqt6`
 
 ## About the Authors
 Chase Grajeda - M.S. Computer Science @ Rensselaer Polytechnic Institute
