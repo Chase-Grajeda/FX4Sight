@@ -12,7 +12,7 @@ Install conda environment (requires `Python >= 3.11`)
 
 Install remaining dependencies via pip  
 `pip install tensorflow`  
-`pip install ptqt6`
+`pip install pyqt6`
 
 ## About the Authors
 Chase Grajeda - M.S. Computer Science @ Rensselaer Polytechnic Institute
