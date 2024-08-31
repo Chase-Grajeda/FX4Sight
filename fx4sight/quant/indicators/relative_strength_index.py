@@ -28,6 +28,9 @@ class RelativeStrengthIndex():
         
         Args:
             price (float): Latest price.
+        Returns:
+            Current RSI value (float). If not there are not
+            at least `period` prices, the RSI will be 0.0.
         '''
         self.prices.append(price)
 
@@ -54,9 +57,8 @@ class RelativeStrengthIndex():
 
     def get(self) -> float:
         '''
-        Returns the current RSI value (float).
-
-        If not updated with at least `period` prices, 
-        the RSI will be 0.0.
+        Returns:
+            Current RSI value (float). If there are not
+            at least `period` prices, the RSI will be 0.0.
         '''
         return self.rsi

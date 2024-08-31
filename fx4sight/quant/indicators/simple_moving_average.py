@@ -26,6 +26,9 @@ class SimpleMovingAverage():
         
         Args:
             price (float): Latest price.
+        Returns:
+            Current SMA value (float). If there are not
+            at least `period` prices, the SMA will be 0.0.
         '''
         self.prices.append(price)
         
@@ -35,9 +38,8 @@ class SimpleMovingAverage():
     
     def get(self) -> float:
         '''
-        Returns the current SMA value (float).
-
-        If not updated with at least `period` prices, 
-        the SMA will be 0.0.
+        Returns:
+            The current SMA value (float). If not updated
+            with at least `period` prices, the SMA will be 0.0.
         '''
         return self.sma
