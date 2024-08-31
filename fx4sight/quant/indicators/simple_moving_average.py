@@ -32,7 +32,7 @@ class SimpleMovingAverage():
         '''
         self.prices.append(price)
         
-        if len(self.prices) > self.period:
+        if len(self.prices) >= self.period:
             self.sma = np.mean(self.prices[-self.period:])
         return self.sma
     
