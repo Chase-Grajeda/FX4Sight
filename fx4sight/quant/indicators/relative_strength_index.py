@@ -31,7 +31,7 @@ class RelativeStrengthIndex():
             price (float): Latest price.
         Returns:
             Current RSI value (float). If not there are not
-            at least `period` prices, the RSI will be NaN.
+            at least `period + 1` prices, the RSI will be NaN.
         '''
         self.prices.append(price)
 
@@ -61,7 +61,10 @@ class RelativeStrengthIndex():
         '''
         Returns:
             Current RSI value (float). If there are not
-            at least `period` prices, the RSI will be NaN.
+            at least `period + 1` prices, the RSI will be NaN.
+            With only `period` prices, the RSI is not
+            informative as the momentum is based on only
+            one price movement.
         '''
         return self.rsi
     
