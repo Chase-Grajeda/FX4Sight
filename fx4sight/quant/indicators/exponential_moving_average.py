@@ -24,6 +24,7 @@ class ExponentialMovingAverage():
         self.ema = 0.0
         self.ema_prev = None
         self.multiplier = 2 / (self.period + 1)
+        self.history = np.array([])
 
     def update(self, price: float) -> float:
         '''
@@ -45,6 +46,7 @@ class ExponentialMovingAverage():
             else:
                 self.ema = price * self.multiplier + self.ema_prev * (1 - self.multiplier)
             self.ema_prev = self.ema
+            self.history = np.append(self.history, self.ema)
         return self.ema
     
     def get(self) -> float:
@@ -54,3 +56,10 @@ class ExponentialMovingAverage():
             at least `period` prices, the EMA will be 0.0.
         '''
         return self.ema
+    
+    def get_history(self) -> np.array:
+        '''
+        Returns:
+            All stored EMA values (np.array).
+        '''
+        return self.history

@@ -17,6 +17,7 @@ class SimpleMovingAverage():
         self.period = period
         self.prices = []
         self.sma = 0.0
+        self.history = np.array([])
 
     def update(self, price: float) -> float:
         '''
@@ -34,6 +35,7 @@ class SimpleMovingAverage():
         
         if len(self.prices) >= self.period:
             self.sma = np.mean(self.prices[-self.period:])
+            self.history = np.append(self.history, self.sma)
         return self.sma
     
     def get(self) -> float:
@@ -43,3 +45,10 @@ class SimpleMovingAverage():
             with at least `period` prices, the SMA will be 0.0.
         '''
         return self.sma
+    
+    def get_history(self) -> np.array:
+        '''
+        Returns:
+            All stored SMA values (np.array).
+        '''
+        return self.history
