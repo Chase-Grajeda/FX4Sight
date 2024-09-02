@@ -16,7 +16,7 @@ class SimpleMovingAverage():
         '''
         self.period = period
         self.prices = []
-        self.sma = 0.0
+        self.sma = None
         self.history = np.array([])
 
     def update(self, price: float) -> float:
@@ -29,7 +29,7 @@ class SimpleMovingAverage():
             price (float): Latest price.
         Returns:
             Current SMA value (float). If there are not
-            at least `period` prices, the SMA will be 0.0.
+            at least `period` prices, the SMA will be NaN.
         '''
         self.prices.append(price)
         
@@ -42,7 +42,7 @@ class SimpleMovingAverage():
         '''
         Returns:
             The current SMA value (float). If not updated
-            with at least `period` prices, the SMA will be 0.0.
+            with at least `period` prices, the SMA will be NaN.
         '''
         return self.sma
     

@@ -21,7 +21,7 @@ class ExponentialMovingAverage():
         '''
         self.period = period
         self.prices = []
-        self.ema = 0.0
+        self.ema = None
         self.ema_prev = None
         self.multiplier = 2 / (self.period + 1)
         self.history = np.array([])
@@ -36,7 +36,7 @@ class ExponentialMovingAverage():
             price (float): Latest price.
         Returns:
             Current EMA value (float). If there are not
-            at least `period` prices, the EMA will be 0.0.
+            at least `period` prices, the EMA will be NaN.
         '''
         self.prices.append(price)
         
@@ -53,7 +53,7 @@ class ExponentialMovingAverage():
         '''
         Returns:
             The current EMA value (float). If there are not
-            at least `period` prices, the EMA will be 0.0.
+            at least `period` prices, the EMA will be NaN.
         '''
         return self.ema
     
