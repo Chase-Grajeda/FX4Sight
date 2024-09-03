@@ -13,12 +13,12 @@ class RelativeStrengthIndex():
                 when calculating the RSI. Defaults to 14.
         '''
         self.period = period
-        self.prices = []
-        self.gains = []
-        self.losses = []
         self.avg_gain = 0.0
         self.avg_loss = 0.0
         self.rsi = None
+        self.prices = np.array([])
+        self.gains = np.array([])
+        self.losses = np.array([])
         self.history = np.array([])
     
     def update(self, price: float) -> float:
@@ -33,17 +33,17 @@ class RelativeStrengthIndex():
             Current RSI value (float). If not there are not
             at least `period + 1` prices, the RSI will be NaN.
         '''
-        self.prices.append(price)
+        self.prices = np.append(self.prices, price)
 
         if len(self.prices) > 1:
             change = self.prices[-1] - self.prices[-2]
             
             if change > 0:
-                self.gains.append(change)
-                self.losses.append(0)
+                self.gains = np.append(self.gains, change)
+                self.losses = np.append(self.losses, 0)
             else:
-                self.gains.append(0)
-                self.losses.append(-change)
+                self.gains = np.append(self.gains, 0)
+                self.losses = np.append(self.losses, abs(change))
         
         if len(self.prices) > self.period:
             if len(self.prices) == self.period + 1:

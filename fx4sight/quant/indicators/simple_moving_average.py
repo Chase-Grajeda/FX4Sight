@@ -15,8 +15,8 @@ class SimpleMovingAverage():
                 when calculating the SMA. Defaults to 14.
         '''
         self.period = period
-        self.prices = []
         self.sma = None
+        self.prices = np.array([])
         self.history = np.array([])
 
     def update(self, price: float) -> float:
@@ -31,7 +31,7 @@ class SimpleMovingAverage():
             Current SMA value (float). If there are not
             at least `period` prices, the SMA will be NaN.
         '''
-        self.prices.append(price)
+        self.prices = np.append(self.prices, price)
         
         if len(self.prices) >= self.period:
             self.sma = np.mean(self.prices[-self.period:])

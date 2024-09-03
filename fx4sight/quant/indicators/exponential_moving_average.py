@@ -20,10 +20,10 @@ class ExponentialMovingAverage():
                 when calculating the EMA. Defaults to 14.
         '''
         self.period = period
-        self.prices = []
         self.ema = None
         self.ema_prev = None
         self.multiplier = 2 / (self.period + 1)
+        self.prices = np.array([])
         self.history = np.array([])
 
     def update(self, price: float) -> float:
@@ -38,7 +38,7 @@ class ExponentialMovingAverage():
             Current EMA value (float). If there are not
             at least `period` prices, the EMA will be NaN.
         '''
-        self.prices.append(price)
+        self.prices = np.append(self.prices, price)
         
         if len(self.prices) >= self.period:
             if self.ema_prev == None:
