@@ -23,9 +23,9 @@ Install remaining dependencies via pip
 `pip install pyqt6`
 
 Add API keys for Alpaca
-`conda env config vars set ALPACA_KEY=your_key_here`
-`conda env config vars set ALPACA_SEC_KEY=your_key_here`
-`conda deactivate`
+`conda env config vars set ALPACA_KEY=your_key_here`  
+`conda env config vars set ALPACA_SEC_KEY=your_key_here`  
+`conda deactivate`  
 `conda activate fx4s`
 
 ## About the Authors
