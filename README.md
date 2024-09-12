@@ -16,10 +16,17 @@ WIP
 ## Contributing
 Install conda environment (requires `Python >= 3.11`)  
 `conda env create -f environment.yaml -n fx4s`
+`conda activate fx4s`
 
 Install remaining dependencies via pip  
 `pip install tensorflow`  
 `pip install pyqt5`
+
+Add API keys for Alpaca  
+`conda env config vars set ALPACA_KEY=your_key_here`  
+`conda env config vars set ALPACA_SEC_KEY=your_key_here`  
+`conda deactivate`  
+`conda activate fx4s`
 
 ## About the Authors
 Chase Grajeda - M.S. Computer Science @ Rensselaer Polytechnic Institute
