@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from fx4sight.quant import *
 
 class MainWindow(QMainWindow):
     def __init__(self):
