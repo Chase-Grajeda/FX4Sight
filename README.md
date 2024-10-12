@@ -22,6 +22,9 @@ Install remaining dependencies via pip
 `pip install tensorflow`  
 `pip install pyqt5`
 
+Install pre-commit hooks
+`pre-commit install`
+
 Add API keys for Alpaca  
 `conda env config vars set ALPACA_KEY=your_key_here`  
 `conda env config vars set ALPACA_SEC_KEY=your_key_here`  

@@ -6,5 +6,5 @@ repos:
         name: Check black formatting
         entry: black . --check
         language: system
-        types: [python]
         always_run: true
+        verbose: true
