@@ -18,7 +18,7 @@ Install conda environment (requires `Python >= 3.11`)
 `conda env create -f environment.yaml -n fx4s`
 `conda activate fx4s`
 
-Install remaining dependencies via pip  
+Install remaining dependencies via pip
 `pip install tensorflow`  
 `pip install pyqt5`
 
