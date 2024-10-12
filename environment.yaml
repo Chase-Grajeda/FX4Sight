@@ -8,6 +8,6 @@ dependencies:
 - matplotlib
 - pre-commit
 - black
-- juypter-black
+- black[jupyter]
 - seaborn
 - pip
