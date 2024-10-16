@@ -1,2 +1,2 @@
-# Exclude all python cache files.
+# Exclude all Python cache files.
 *.pyc
