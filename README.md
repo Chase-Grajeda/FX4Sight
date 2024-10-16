@@ -14,7 +14,7 @@ WIP
 
 
 ## Contributing
-Install conda environment (requires `Python >= 3.11`)<br>
+Install conda environment (requires `Python 3.11.* or 3.12.*`)<br>
 `conda env create -f environment.yaml -n fx4s`<br>
 `conda activate fx4s`
 
