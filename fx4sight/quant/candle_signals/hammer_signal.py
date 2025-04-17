@@ -1,6 +1,7 @@
 import numpy as np
 
-class HammerSignal():
+
+class HammerSignal:
     def __init__(self, bull: bool = True, inverse: bool = False) -> None:
         """Candlestick pattern that occurs when the wick is long with a short
         upper body. This is usually a reversal signal found at the bottom of
@@ -16,5 +17,3 @@ class HammerSignal():
         """
         self.bull = bull
         self.inverse = inverse
-    
-    

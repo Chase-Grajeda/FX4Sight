@@ -14,15 +14,17 @@ WIP
 
 
 ## Contributing
-Install conda environment (requires `Python >= 3.11`)  
-`conda env create -f environment.yaml -n fx4s`
+Install conda environment (requires `Python 3.11.* or 3.12.*`)<br>
+`conda env create -f environment.yaml -n fx4s`<br>
 `conda activate fx4s`
 
-Install remaining dependencies via pip  
-`pip install tensorflow`  
-`pip install pyqt5`
+Install TensorFlow via pip<br>
+`pip install tensorflow`
 
-Add API keys for Alpaca  
+Install pre-commit hooks<br>
+`pre-commit install`
+
+Add API keys for Alpaca<br>
 `conda env config vars set ALPACA_KEY=your_key_here`  
 `conda env config vars set ALPACA_SEC_KEY=your_key_here`  
 `conda deactivate`  

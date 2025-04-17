@@ -1,10 +1,14 @@
 channels:
 - conda-forge
 dependencies:
-- python >= 3.11
-- jupyter
-- jupyterlab
-- numpy
-- matplotlib
-- seaborn
+- python >=3.11,<3.13
 - pip
+- pyqt
+- numpy
+- black
+- jupyter
+- seaborn
+- jupyterlab
+- matplotlib
+- pre-commit
+- jupyter-black
